@@ -1,0 +1,17 @@
+{
+  "environments": {
+    "production": {
+      "server_name": "random-meme.com",
+      "action": "deploy",
+      "revision": "master"
+    },
+    "staging": {
+      "server_name": "staging.random-meme.com",
+      "action": "deploy",
+      "revision": "master"
+    }
+  },
+  // "repository": "https://github.com/dholst/random-meme.git",
+  "repository": "/etc/code/random-meme",
+  "id": "randommeme"
+}

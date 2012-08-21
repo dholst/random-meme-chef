@@ -1,0 +1,44 @@
+{
+  "name": "base",
+  "description": "base role",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+    "authorization": {
+      "sudo": {
+        "groups": [
+          "admin"
+        ],
+        "passwordless": true,
+        "users": [
+          "dholst"
+        ]
+      }
+    },
+    "users": [
+      "dholst"
+    ],
+    "resolver": {
+      "nameservers": [
+        "8.8.8.8",
+        "8.8.4.4"
+      ]
+    }
+  },
+  "override_attributes": {
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[hostname]",
+    "recipe[timezone]",
+    "recipe[apt]",
+    "recipe[resolver]",
+    "recipe[chef-client::service]",
+    "recipe[user::data_bag]",
+    "recipe[sudo]",
+    "recipe[git]",
+    "recipe[ruby::1.9.3-p194]",
+    "recipe[logrotate]"
+  ],
+  "env_run_lists": {
+  }
+}

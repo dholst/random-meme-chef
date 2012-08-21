@@ -1,0 +1,6 @@
+description "Our applications"
+version     "0.0.1"
+depends     "imagemagick"
+depends     "hipchat"
+depends     "nginx"
+depends     "postgresql"

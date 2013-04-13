@@ -12,7 +12,6 @@ Vagrant::Config.run do |config|
     web_config.vm.customize { |vm| vm.memory_size = 1024 }
     web_config.vm.network :hostonly, "192.168.51.50"
     web_config.vm.share_folder "chef", "/etc/chef", "~/.chef"
-    web_config.vm.share_folder "code", "/etc/code", "~/Projects/dh"
     web_config.vm.provision :chef_solo do |chef|
       chef.cookbooks_path = "cookbooks"
       chef.data_bags_path = "data_bags"
